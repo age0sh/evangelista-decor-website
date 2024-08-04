@@ -147,12 +147,12 @@ body {
     height: 500px; /* Ajusta según el tamaño que desees para las imágenes */
     margin:10px; /* Añade un margen alrededor de cada imagen */
     border-radius: 5px; /* Añade esquinas redondeadas */
-    cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
     transition: transform 1200 ease-in-out !important;
 }
 
 .collage img:hover {
     transform: translateY(-10px) !important;
+    cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
 }
 
 .banner {
@@ -486,5 +486,69 @@ button:disabled {
         height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
         margin:15px; /* Añade un margen alrededor de cada imagen */
         border-radius: 5px; /* Añade esquinas redondeadas */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para móviles */
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    #MenuItems {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #MenuItems li {
+        margin: 0.5em 0;
+    }
+
+    .collage img, .galeria .fila img {
+        width: 100%;
+        max-width: none;
+        margin: 0.5em 0;
+    }
+
+    .galeria .fila {
+        display: block;
+    }
+
+    .galeria .fila img {
+        margin: 0.5em auto;
+        width: 80vw;
+        max-width: 21.875rem;
+    }
+
+    .banner {
+        height: 20vh; /* Ajustar la altura del banner en móviles */
+    }
+
+    .categorias {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+
+    .container_home h1, .categorias, .contacto h1, .devolucion h1, 
+    .privacidad h1, .terminos-condicion h1, .preguntas h1, .galeria h1 {
+        font-size: 1.75rem; /* Reducir el tamaño de los títulos en móviles */
+    }
+
+    .contacto p, .devolucion p, .privacidad p, .terminos-condicion p, .preguntas p, .info {
+        font-size: 1rem; /* Ajustar el tamaño de texto */
+        margin: 0.5em 1em; /* Ajustar los márgenes */
+    }
+
+    .icon_redes a {
+        font-size: 3.5rem; /* Reducir el tamaño de los íconos de redes sociales */
+    }
+
+    .footer h4, .footer_links li, .footer_links a {
+        font-size: 1rem; /* Ajustar el tamaño de texto del pie de página */
+    }
+    
+    .footer_links li {
+        margin: 0.5em 1em;
     }
 }
