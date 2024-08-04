@@ -1,0 +1,488 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: ghostwhite;
+}
+
+/* Estilos generales */
+.header {
+    background-color:lightskyblue;
+    position: relative;
+}
+
+.logo-container {
+    width: 120px;
+    margin: auto;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.navbar-container {
+    position: relative;
+    background-color: lightskyblue;
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(0);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    position: relative;
+    z-index: 100;;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    #MenuItems {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #MenuItems li {
+        margin: 5px 0;
+    }
+
+    .collage img {
+        width: calc(50% - 10px);
+    }
+}
+
+#MenuItems {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#MenuItems li {
+    margin: 0 10px;
+}
+
+#MenuItems a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    font-family: 'Acme', sans-serif;
+    margin: auto 50px;
+}
+
+#MenuItems a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.container_home h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+
+
+.info {
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin: 20px;
+}
+
+@keyframes pingpong {
+    0% {
+        transform: translateX(50%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+.animate {
+    animation: pingpong 9s linear infinite;
+}
+
+
+
+.categorias{
+    text-align: center;
+    font-family: "Playwrite DK Loopet", cursive;
+    font-size: 20px;
+    background-color: ghostwhite;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    padding: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.collage img, a {
+    width: 350px; /* Ajusta según el tamaño que desees para las imágenes */
+    height: 500px; /* Ajusta según el tamaño que desees para las imágenes */
+    margin:10px; /* Añade un margen alrededor de cada imagen */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
+    transition: transform 1200 ease-in-out !important;
+}
+
+.collage img:hover {
+    transform: translateY(-10px) !important;
+}
+
+.banner {
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.banner h3 {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+.banner img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.banner button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 18px;
+    margin-top: 20px;  
+    display: block;
+    margin: auto;
+
+}
+.banner button:hover {
+    background-color: lightskyblue;
+    color: black;
+    cursor: pointer;
+}
+
+
+.footer {
+    background: lightskyblue;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer h4 {
+    color: black;
+    font-family: 'Playwrite DK Loopet', cursive;
+    margin-bottom: 10px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.footer_links li {
+    display: inline-block;
+    margin: 10px 20px; /* Espaciado horizontal entre elementos */
+    font-family: 'Popins', sans-serif;
+}
+.footer_links a {
+    color: black;
+    text-decoration: none;
+}
+.footer_links a:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.footer hr {
+    border: 0;
+    border-top: 1px solid black;
+}
+.footer_links {
+    margin-bottom: 20px;
+}
+
+.contacto h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+    .icon_redes {
+    display: auto;
+    text-align: center;
+    }
+
+.icon_redes a {
+    font-size: 90px;
+    color: black;
+    margin: 10px; /* Añade margen vertical entre los iconos */
+    text-decoration: none;
+}
+
+.icon_redes p {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 20px;
+    color: black;
+    margin: 10px;
+}
+
+.icon_redes a:hover {
+    color: lightskyblue;
+    cursor: pointer;
+}
+
+.preguntas h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.preguntas h2 {
+    font-family: 'roboto', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.preguntas p {
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.devolucion h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.devolucion h2 {
+    font-family: 'roboto', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.devolucion p, li {
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+
+.privacidad h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.privacidad h2 {
+    font-family: 'roboto', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.privacidad p, li{
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+
+.terminos-condicion h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.terminos-condicion h2 {
+    font-family: 'roboto', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.terminos-condicion p{
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.galeria h1 {
+    font-family: 'Playwrite DK Loopet', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.galeria {
+    text-align: center;
+    margin-top: 20px;
+    overflow: hidden; /* Oculta imágenes fuera del contenedor */
+}
+
+.galeria .fila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en múltiples filas si es necesario */
+    overflow: hidden; /* Oculta imágenes fuera del contenedor */
+}
+
+.galeria .fila img {
+    width: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+    height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+    margin:15px; /* Añade un margen alrededor de cada imagen */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
+}
+
+.fila img:hover {
+    transform: scale(1.1);
+}
+
+.contenedor-flechas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+button.anterior, button.siguiente {
+    background: none;
+    border: none;
+    font-size: 3em; /* Tamaño de las flechas */
+    color: black;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+button.anterior:hover, button.siguiente:hover {
+    color: lightskyblue; /* Cambia el color al pasar el ratón */
+}
+
+button:disabled {
+    color: grey; /* Color cuando están deshabilitadas */
+    cursor: not-allowed;
+}
+
+
+@media (max-width: 1470px) {
+    .galeria .fila img {
+        width: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+        height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+        margin:15px; /* Añade un margen alrededor de cada imagen */
+        border-radius: 5px; /* Añade esquinas redondeadas */
+    }
+}
