@@ -87,7 +87,7 @@ body {
 
 
 .container_home h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -159,46 +159,50 @@ body {
     background-image: url('images/banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 20px;
     margin-top: 100px;
     margin-bottom: 100px;
     position: relative;
+    width: 100vw; /* Asegura que el banner ocupe todo el ancho de la ventana */
+    overflow-x: hidden; /* Evita que aparezca un scroll horizontal */
 }
 
-.banner h3 {
+.banner_info {
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 30px;
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
-    width: 90%;
     margin: auto;
 }
-.banner img {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
+
+.banner_info h3,
+.banner_info i,
+.banner_info button {
+    margin: 5px 0; /* Margen vertical de 5px entre los elementos */
 }
+
+.banner_info i {
+    font-size: 40px; /* Tamaño del ícono de WhatsApp */
+}
+
 .banner button {
-    background-color: black;
+    background-color: lightskyblue;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 18px;
-    margin-top: 20px;  
     display: block;
     margin: auto;
-
 }
+
 .banner button:hover {
     background-color: lightskyblue;
     color: black;
@@ -214,7 +218,7 @@ body {
 }
 .footer h4 {
     color: black;
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     margin-bottom: 10px;
 }
 ul {
@@ -244,7 +248,7 @@ ul {
 }
 
 .contacto h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -275,7 +279,7 @@ ul {
 }
 
 .icon_redes p {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 20px;
     color: black;
     margin: 10px;
@@ -287,7 +291,7 @@ ul {
 }
 
 .preguntas h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -323,7 +327,7 @@ ul {
 }
 
 .devolucion h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -354,7 +358,7 @@ ul {
 
 
 .privacidad h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -385,7 +389,7 @@ ul {
 
 
 .terminos-condicion h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -415,7 +419,7 @@ ul {
 }
 
 .galeria h1 {
-    font-family: 'Playwrite DK Loopet', cursive;
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
