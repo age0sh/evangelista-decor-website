@@ -175,8 +175,8 @@ body {
 
 .banner_info {
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 50px;
     text-align: center;
     margin: auto;
 }
@@ -184,11 +184,7 @@ body {
 .banner_info h3,
 .banner_info i,
 .banner_info button {
-    margin: 5px 0; /* Margen vertical de 5px entre los elementos */
-}
-
-.banner_info i {
-    font-size: 40px; /* Tamaño del ícono de WhatsApp */
+    margin: 5px; /* Margen vertical de 5px entre los elementos */
 }
 
 .banner button {
@@ -418,16 +414,8 @@ ul {
     margin-right: 50px;
 }
 
-.galeria h1 {
-    font-family: 'roboto', sans-serif;
-    font-size: 36px;
-    color: black;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
 .galeria {
+    position: relative;
     text-align: center;
     margin-top: 20px;
     overflow: hidden; /* Oculta imágenes fuera del contenedor */
@@ -437,48 +425,91 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Permite que las imágenes se envuelvan en múltiples filas si es necesario */
+    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan */
     overflow: hidden; /* Oculta imágenes fuera del contenedor */
 }
 
 .galeria .fila img {
     width: 400px; /* Ajusta según el tamaño que desees para las imágenes */
     height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
-    margin:15px; /* Añade un margen alrededor de cada imagen */
+    margin: 15px; /* Añade un margen alrededor de cada imagen */
     border-radius: 5px; /* Añade esquinas redondeadas */
     cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
 }
 
 .fila img:hover {
-    transform: scale(1.1);
+    transform: scale(1.09);
 }
 
-.contenedor-flechas {
+.contenedor-puntos {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.puntos {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+    gap: 10px;
 }
 
-
-button.anterior, button.siguiente {
-    background: none;
-    border: none;
-    font-size: 3em; /* Tamaño de las flechas */
-    color: black;
+.puntos div {
+    width: 10px;
+    height: 10px;
+    background-color: lightgrey;
+    border-radius: 50%;
     cursor: pointer;
-    padding: 0 20px;
 }
 
-button.anterior:hover, button.siguiente:hover {
-    color: lightskyblue; /* Cambia el color al pasar el ratón */
+.puntos div.active {
+    background-color: black;
 }
 
-button:disabled {
-    color: grey; /* Color cuando están deshabilitadas */
-    cursor: not-allowed;
+/* Estilo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Valor alto para estar encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8); /* Fondo negro con opacidad */
 }
 
+/* Contenido del modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 50%;
+    max-width: 1200px; /* Ajusta según sea necesario */
+}
+
+/* Cerrar el modal */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Mostrar texto de la imagen */
+#caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* Estilo para la imagen dentro del modal */
+.modal-content {
+    max-width: 100%;
+    max-height: 80vh; /* Limita la altura de la imagen */
+}
 
 @media (max-width: 1470px) {
     .galeria .fila img {
@@ -552,3 +583,4 @@ button:disabled {
         margin: 0.5em 1em;
     }
 }
+
