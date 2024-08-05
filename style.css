@@ -94,8 +94,6 @@ body {
     display: block;
 }
 
-
-
 .info {
     font-family: 'roboto', sans-serif;
     font-size: 18px;
@@ -103,23 +101,6 @@ body {
     text-align: center;
     margin: 20px;
 }
-
-@keyframes pingpong {
-    0% {
-        transform: translateX(50%);
-    }
-    50% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(50%);
-    }
-}
-
-.animate {
-    animation: pingpong 9s linear infinite;
-}
-
 
 
 .categorias{
@@ -205,7 +186,6 @@ body {
     cursor: pointer;
 }
 
-
 .footer {
     background: lightskyblue;
     color: black;
@@ -286,8 +266,11 @@ ul {
     cursor: pointer;
 }
 
-.preguntas h1 {
-    font-family: 'roboto', sans-serif;
+.preguntas h1, 
+.devolucion h1, 
+.privacidad h1, 
+.terminos-condicion h1 {
+    font-family: 'Roboto', sans-serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -295,25 +278,29 @@ ul {
     margin-bottom: 20px;
 }
 
-.preguntas h2 {
-    font-family: 'roboto', sans-serif;
+.preguntas h2, 
+.devolucion h2, 
+.privacidad h2, 
+.terminos-condicion h2 {
+    font-family: 'Roboto', sans-serif;
     font-size: 24px;
     color: black;
     text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
+    margin: 20px 30px;
 }
 
-.preguntas p {
-    font-family: 'roboto', sans-serif;
+.preguntas p, 
+.devolucion p, 
+.devolucion li, 
+.privacidad p, 
+.privacidad li, 
+.terminos-condicion p {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: black;
     text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 50px;
+    margin: 20px 30px;
+    line-height: 1.5;
 }
 
 .mapa {
@@ -322,96 +309,46 @@ ul {
     margin: 50px;
 }
 
-.devolucion h1 {
-    font-family: 'roboto', sans-serif;
-    font-size: 36px;
-    color: black;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
+@media (max-width: 768px) {
+    /* Centrar contenido */
+    .preguntas, 
+    .devolucion, 
+    .privacidad, 
+    .terminos-condicion {
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .preguntas h2, 
+    .devolucion h2, 
+    .privacidad h2, 
+    .terminos-condicion h2,
+    .preguntas p, 
+    .devolucion p, 
+    .devolucion li, 
+    .privacidad p, 
+    .privacidad li, 
+    .terminos-condicion p {
+        text-align: center;
+        margin: 20px 10px;
+    }
+
+    .mapa iframe {
+        width: 100%;
+        height: auto;
+    }
 }
 
-.devolucion h2 {
-    font-family: 'roboto', sans-serif;
-    font-size: 24px;
-    color: black;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-}
-
-.devolucion p, li {
-    font-family: 'roboto', sans-serif;
-    font-size: 18px;
-    color: black;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 50px;
-}
-
-
-.privacidad h1 {
-    font-family: 'roboto', sans-serif;
-    font-size: 36px;
-    color: black;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-.privacidad h2 {
-    font-family: 'roboto', sans-serif;
-    font-size: 24px;
-    color: black;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-}
-
-.privacidad p, li{
-    font-family: 'roboto', sans-serif;
-    font-size: 18px;
-    color: black;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 50px;
-}
-
-
-.terminos-condicion h1 {
-    font-family: 'roboto', sans-serif;
-    font-size: 36px;
-    color: black;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-.terminos-condicion h2 {
-    font-family: 'roboto', sans-serif;
-    font-size: 24px;
-    color: black;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-}
-
-.terminos-condicion p{
-    font-family: 'roboto', sans-serif;
-    font-size: 18px;
-    color: black;
-    text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px;
-    margin-right: 50px;
+/* Ajustes para web */
+@media (min-width: 769px) {
+    .preguntas p, 
+    .devolucion p, 
+    .devolucion li, 
+    .privacidad p, 
+    .privacidad li, 
+    .terminos-condicion p {
+        line-height: 1.5;
+    }
 }
 
 .galeria {
@@ -552,13 +489,64 @@ ul {
         max-width: 21.875rem;
     }
 
-    .banner {
-        height: 20vh; /* Ajustar la altura del banner en móviles */
-    }
-
-    .categorias {
-        padding-left: 1.5em;
-        padding-right: 1.5em;
+    @media (max-width: 768px) {
+        /* Estilos específicos para móviles */
+    
+        .navbar {
+            flex-direction: column;
+        }
+    
+        #MenuItems {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        #MenuItems li {
+            margin: 0.5em 0;
+        }
+    
+        .collage img, .galeria .fila img {
+            width: 100%;
+            max-width: none;
+            margin: 0.5em 0;
+        }
+    
+        .galeria .fila {
+            display: block;
+        }
+    
+        .galeria .fila img {
+            margin: 0.5em auto;
+            width: 80vw;
+            max-width: 21.875rem;
+        }
+    
+        .banner {
+            height: 40vh; /* Ajustar la altura del banner en móviles */
+        }
+    
+        .banner_info {
+            height: auto; /* Ajustar la altura del contenido dentro del banner */
+            padding: 10px; /* Reducir el padding */
+        }
+    
+        .banner_info h3 {
+            font-size: 1.2rem; /* Ajustar el tamaño del h3 en móviles */
+        }
+    
+        .banner_info p {
+            font-size: 1rem; /* Ajustar el tamaño del párrafo en móviles */
+        }
+    
+        .banner_info button {
+            font-size: 1rem; /* Ajustar el tamaño del botón en móviles */
+            padding: 8px 16px; /* Ajustar el padding del botón en móviles */
+        }
+    
+        .categorias {
+            padding-left: 1.5em;
+            padding-right: 1.5em;
+        }
     }
 
     .container_home h1, .categorias, .contacto h1, .devolucion h1, 
