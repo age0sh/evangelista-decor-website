@@ -632,6 +632,20 @@ ul {
         height: auto;
     }
 }
+
+@media (max-width: 430px) {
+    .fila {
+        /* Asegúrate de que el contenedor de las fotos se adapte al ancho de la pantalla */
+        flex-wrap: wrap;
+        justify-content: center; /* Centra las imágenes si hay espacio adicional */
+    }
+
+    .fila img {
+        /* Ajusta el tamaño de las imágenes para que se adapten al ancho de la pantalla */
+        width: 100%; /* Asegúrate de que las imágenes ocupen el ancho completo del contenedor */
+        margin: 5px; /* Ajusta el margen si es necesario */
+    }
+}
 .contenedor-flechas {
     display: flex;
     justify-content: center;
