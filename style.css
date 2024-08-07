@@ -91,22 +91,18 @@ body {
     background-color: #fcf3e5;
     color: black;
     letter-spacing: 5px;
-    padding: 5px;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .collage {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
 }
 
 .collage img {
-    width: 550px;
-    height: 550px;
-    margin: 15px;
+    width: 100%;
+    height: 90%;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -120,13 +116,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
 }
 
 .collage2 img {
-    width: 1000px;
-    height: 400px;
-    margin: 15px;
+    width: 100%;
+    height: 70%;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -137,38 +132,35 @@ body {
 }
 
 .banner {
-    background-image: url('images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: black;
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    width: 80%; /* Ajusta el ancho del banner al tamaño deseado */
+    margin: 0 auto 50px; /* Centra el banner y añade un margen inferior */
     position: relative;
-    width: 100vw; /* Asegura que el banner ocupe todo el ancho de la ventana */
+    padding: 1%; /* Ajusta el padding si es necesario */
 
+    margin-bottom: 200px;
 }
 
-.banner h3{
-    font-family: 'pinyon script', cursive;
-    letter-spacing: 8px;
-    font-size: 70px;
+.banner-image {
+    width: 100%;
+    height: 400px;
+    display: block;
+    border-radius: 5px; /* Opcional: redondea las esquinas de la imagen */
 }
 
 .banner_info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin: auto;
-    
+    color: black;
 }
 
-.banner_info h3,
-.banner_info i,
-.banner_info button {
-    margin: 5px; /* Margen vertical de 5px entre los elementos */
+.banner h3 {
+    font-family: 'Pinyon Script', cursive;
+    letter-spacing: 8px;
+    font-size: 50px;
+    margin: 0;
 }
 
 .banner button {
@@ -180,7 +172,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     display: block;
-    margin: auto;
+    margin: 20px auto 0;
 }
 
 .banner button:hover {
@@ -188,6 +180,7 @@ body {
     color: white;
     cursor: pointer;
 }
+
 
 .footer {
     background: #a4a68e;
@@ -319,54 +312,73 @@ ul {
 
 .galeria {
     position: relative;
-    text-align: center;
-    margin-top: 20px;
-    overflow: hidden; /* Oculta imágenes fuera del contenedor */
-    font-family: 'pinyon script', cursive;
-    letter-spacing: 5px;
-}
-
-.galeria .fila {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* Evita que las imágenes se envuelvan */
-    overflow: hidden; /* Oculta imágenes fuera del contenedor */
 }
 
-.galeria .fila img {
+.galeria h1 {
+    font-family: 'pinyon script', cursive;
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+
+.fila {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.fila img {
+    flex: 1;
+    display: block;
     width: 400px; /* Ajusta según el tamaño que desees para las imágenes */
     height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
     margin: 15px; /* Añade un margen alrededor de cada imagen */
     border-radius: 5px; /* Añade esquinas redondeadas */
     cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
+
 }
 
-.fila img:hover {
-    transform: scale(1.09);
+.contenedor-flechas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Espacio arriba de las flechas */
+}
+
+.contenedor-flechas button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000; /* Cambia el color de las flechas si es necesario */
 }
 
 .contenedor-puntos {
     text-align: center;
-    margin: 10px 0;
+    margin-bottom: 10px; /* Espacio abajo de los puntos */
 }
 
 .puntos {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    margin-top: 10px;
 }
 
 .puntos div {
     width: 10px;
     height: 10px;
-    background-color: lightgrey;
     border-radius: 50%;
-    cursor: pointer;
+    background: #888; /* Color de los puntos inactivos */
+    margin: 0 5px;
 }
 
-.puntos div.active {
-    background-color: black;
+.puntos .active {
+    background: #000; /* Color del punto activo */
 }
 
 /* Estilo del modal */
@@ -416,3 +428,218 @@ ul {
     max-height: 80vh; /* Limita la altura de la imagen */
 }
 
+@media (max-width: 800px) {
+    body {
+        text-align: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-container {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    #MenuItems {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+    }
+
+    #MenuItems li {
+        margin: 10px 0;
+    }
+
+    .container_home h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .container_home p {
+        font-size: 16px;
+        text-align: center;
+        margin: 10px 20px;
+    }
+
+    .content_box {
+        width: 100%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .categorias {
+        font-size: 28px;
+        padding: 5px 20px;
+    }
+
+    .banner {
+        width: 90%; /* Ajusta el ancho del banner */
+        margin: 0 auto; /* Centra el banner horizontalmente */
+        padding: 5%;
+        border: 3px solid #a4a68e; /* Ajusta el grosor del borde si es necesario */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajusta la sombra si es necesario */
+        position: relative;
+        box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+        margin-bottom: 50px;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    }
+
+    .banner_info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+    }
+
+    .banner h3 {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .banner button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+
+    .collage img,
+    .collage2 img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer h4 {
+        font-size: 18px;
+        margin-bottom: 8px;
+        letter-spacing: 3px;
+    }
+
+    .footer_links li {
+        margin: 5px 10px;
+    }
+
+    .contacto h1 {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .contacto p {
+        font-size: 16px;
+        margin: 10px 15px;
+    }
+
+    .icon_redes {
+        margin: 10px 0;
+    }
+
+    .icon_redes a {
+        font-size: 50px;
+        margin: 5px;
+    }
+
+    .icon_redes p {
+        font-size: 16px;
+    }
+
+    .mapa {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido dentro del contenedor */
+        margin: 20px;
+        max-width: 100%; /* Asegura que el contenedor no se desborde del ancho de la pantalla */
+        box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+        overflow: hidden; /* Oculta el contenido que se desborda */
+    }
+    
+    .mapa iframe { /* Si estás usando un iframe para el mapa, ajusta su tamaño */
+        width: 100%;
+        height: 400px; /* Ajusta la altura según sea necesario */
+        border: none; /* Opcional: elimina el borde del iframe */
+    }
+
+    .preguntas h1, 
+    .devolucion h1, 
+    .privacidad h1, 
+    .terminos-condicion h1 {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .preguntas h2, 
+    .devolucion h2, 
+    .privacidad h2, 
+    .terminos-condicion h2 {
+        font-size: 28px;
+        margin: 15px 20px;
+        text-align: center;
+    }
+
+    .preguntas p, 
+    .devolucion p, 
+    .privacidad p, 
+    .terminos-condicion p {
+        font-size: 16px;
+        margin: 15px 20px;
+    }
+
+
+
+    .contenedor-puntos {
+        margin: 10px 0;
+    }
+
+    .puntos {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .puntos div {
+        width: 8px;
+        height: 8px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+    
+}
+@media (max-width: 800px) {
+    .modal-content {
+        width: 100%;
+        max-width: none;
+        height: auto;
+    }
+}
+.contenedor-flechas {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.contenedor-flechas .prev, .contenedor-flechas .next {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+}

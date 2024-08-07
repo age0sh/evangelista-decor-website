@@ -30,77 +30,71 @@ function enviarMensajeWhatsApp() {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.galeria').forEach(galeria => {
-        const fila = galeria.querySelector('.fila');
-        const images = Array.from(fila.children);
-        const puntosContainer = galeria.querySelector('.puntos');
-        let currentIndex = 0;
-        const visibleImages = 3; // Ajusta el número de imágenes visibles si es necesario
-        const totalImages = images.length;
-        let intervalId; // Variable para almacenar el ID del intervalo
+document.addEventListener('DOMContentLoaded', function () {
+    const galleries = document.querySelectorAll('.galeria');
 
-        // Crear los puntos de navegación
-        for (let i = 0; i < Math.ceil(totalImages / visibleImages); i++) {
-            const punto = document.createElement('div');
-            punto.addEventListener('click', () => {
-                currentIndex = i * visibleImages;
-                updateGallery();
-                restartAutoSlide(); // Reiniciar la rotación automática
-            });
-            puntosContainer.appendChild(punto);
+    galleries.forEach(galeria => {
+        const images = galeria.querySelectorAll('img');
+        const prevBtn = galeria.querySelector('.prev');
+        const nextBtn = galeria.querySelector('.next');
+        const puntosContainer = galeria.querySelector('.puntos');
+        
+        let currentIndex = 0;
+
+        function getItemsPerPage() {
+            return window.innerWidth >= 1300 ? 3 : 1;
         }
 
         function updateGallery() {
+            const itemsPerPage = getItemsPerPage();
             images.forEach((img, index) => {
-                if (index >= currentIndex && index < currentIndex + visibleImages) {
-                    img.style.display = 'inline-block';
-                } else {
-                    img.style.display = 'none';
+                img.style.display = (index >= currentIndex && index < currentIndex + itemsPerPage) ? 'block' : 'none';
+            });
+
+            // Actualizar puntos de navegación
+            puntosContainer.innerHTML = '';
+            const totalPuntos = Math.ceil(images.length / itemsPerPage);
+            for (let i = 0; i < totalPuntos; i++) {
+                const punto = document.createElement('div');
+                if (i === Math.floor(currentIndex / itemsPerPage)) {
+                    punto.classList.add('active');
                 }
-            });
-
-            // Actualizar puntos activos
-            const puntos = Array.from(puntosContainer.children);
-            puntos.forEach((punto, index) => {
-                punto.classList.toggle('active', index === Math.floor(currentIndex / visibleImages));
-            });
+                puntosContainer.appendChild(punto);
+            }
         }
 
-        function startAutoSlide() {
-            intervalId = setInterval(() => {
-                currentIndex = (currentIndex + visibleImages) % totalImages;
-                updateGallery();
-            }, 3000); // Cambia cada 5 segundos
+        function showNext() {
+            const itemsPerPage = getItemsPerPage();
+            if (currentIndex + itemsPerPage < images.length) {
+                currentIndex += itemsPerPage;
+            } else {
+                currentIndex = 0; // Reinicia al principio
+            }
+            updateGallery();
         }
 
-        function stopAutoSlide() {
-            clearInterval(intervalId);
+        function showPrev() {
+            const itemsPerPage = getItemsPerPage();
+            if (currentIndex - itemsPerPage >= 0) {
+                currentIndex -= itemsPerPage;
+            } else {
+                currentIndex = Math.max(0, images.length - itemsPerPage); // Muestra las últimas imágenes
+            }
+            updateGallery();
         }
 
-        function restartAutoSlide() {
-            stopAutoSlide();
-            startAutoSlide();
-        }
+        prevBtn.addEventListener('click', showPrev);
+        nextBtn.addEventListener('click', showNext);
 
-        // Inicializar galería y rotación automática
+        window.addEventListener('resize', updateGallery);
+
+        // Inicializa la galería
         updateGallery();
-        startAutoSlide();
-
-        // Detener la rotación automática cuando el cursor está sobre una imagen
-        images.forEach(img => {
-            img.addEventListener('mouseover', () => {
-                stopAutoSlide();
-            });
-
-            img.addEventListener('mouseout', () => {
-                restartAutoSlide();
-            });
-        });
-
-        window.addEventListener('resize', updateGallery); // Actualiza la galería al redimensionar la ventana
     });
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modal');
