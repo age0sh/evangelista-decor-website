@@ -1,25 +1,28 @@
+/* Estilos generales */
 body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background-color: ghostwhite;
+    background-color: #fcf3e5;
 }
 
-/* Estilos generales */
-.header {
-    background-color:lightskyblue;
+.navbar-container {
     position: relative;
+    background-color: #a4a68e;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+    z-index: 100;
 }
 
 .logo-container {
-    width: 120px;
-    margin: auto;
-    padding: 10px;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
+    width: 100px;
+    margin-left: 5%;
 }
 
 .logo img {
@@ -28,44 +31,13 @@ body {
     display: block;
 }
 
-.navbar-container {
-    position: relative;
-    background-color: lightskyblue;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    position: relative;
-    z-index: 100;
-}
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-
-    #MenuItems {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #MenuItems li {
-        margin: 5px 0;
-    }
-
-    .collage img {
-        width: calc(50% - 10px);
-    }
-}
-
 #MenuItems {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
 }
 
 #MenuItems li {
@@ -74,43 +46,51 @@ body {
 
 #MenuItems a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 22px;
-    font-family: 'Acme', sans-serif;
-    margin: auto 50px;
+    font-family: 'Playfair Display', serif;
 }
 
 #MenuItems a:hover {
-    color: black;
-    text-decoration: underline;
+    color: white;
 }
 
-
 .container_home h1 {
-    font-family: 'roboto', sans-serif;
+    font-family: 'pinyon script', cursive;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 5px;
     font-size: 36px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     display: block;
 }
 
-.info {
-    font-family: 'roboto', sans-serif;
+.container_home p {
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
     color: black;
-    text-align: center;
+    text-align: justify;
     margin: 20px;
 }
 
-
-.categorias{
+.content_box {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto 20px;
+    padding: 20px;
     text-align: center;
-    font-family: "Playwrite DK Loopet", cursive;
-    font-size: 20px;
-    background-color: ghostwhite;
+    box-sizing: border-box;
+    border: 1px solid #a4a68e;
+}
+
+
+.categorias {
+    text-align: center;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 32px;
+    background-color: #fcf3e5;
     color: black;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 1px;
+    letter-spacing: 5px;
     padding: 5px;
     padding-left: 50px;
     padding-right: 50px;
@@ -123,17 +103,37 @@ body {
     gap: 10px;
 }
 
-.collage img, a {
-    width: 350px; /* Ajusta según el tamaño que desees para las imágenes */
-    height: 500px; /* Ajusta según el tamaño que desees para las imágenes */
-    margin:10px; /* Añade un margen alrededor de cada imagen */
-    border-radius: 5px; /* Añade esquinas redondeadas */
-    transition: transform 1200 ease-in-out !important;
+.collage img {
+    width: 550px;
+    height: 550px;
+    margin: 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .collage img:hover {
     transform: translateY(-10px) !important;
-    cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
+    cursor: pointer;
+}
+
+.collage2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.collage2 img {
+    width: 1000px;
+    height: 400px;
+    margin: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.collage2 img:hover {
+    transform: translateY(-10px) !important;
+    cursor: pointer;
 }
 
 .banner {
@@ -145,21 +145,24 @@ body {
     justify-content: center;
     align-items: center;
     color: black;
-    font-family: 'roboto', sans-serif;
-    font-size: 20px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     position: relative;
     width: 100vw; /* Asegura que el banner ocupe todo el ancho de la ventana */
-    overflow-x: hidden; /* Evita que aparezca un scroll horizontal */
+
+}
+
+.banner h3{
+    font-family: 'pinyon script', cursive;
+    letter-spacing: 8px;
+    font-size: 70px;
 }
 
 .banner_info {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 25px;
-    border-radius: 50px;
     text-align: center;
     margin: auto;
+    
 }
 
 .banner_info h3,
@@ -169,33 +172,35 @@ body {
 }
 
 .banner button {
-    background-color: lightskyblue;
-    color: white;
-    padding: 10px 20px;
+    background-color: #a4a68e;
+    color: black;
+    padding: 15px 30px;
     border: none;
     border-radius: 20px;
-    font-family: 'roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
     display: block;
     margin: auto;
 }
 
 .banner button:hover {
-    background-color: lightskyblue;
-    color: black;
+    background-color: #a4a68e;
+    color: white;
     cursor: pointer;
 }
 
 .footer {
-    background: lightskyblue;
+    background: #a4a68e;
     color: black;
     padding: 20px 0;
     text-align: center;
 }
 .footer h4 {
     color: black;
-    font-family: 'roboto', sans-serif;
+    font-family: 'pinyon script', cursive;
     margin-bottom: 10px;
+    font-size: 20px;
+    letter-spacing: 5px;
 }
 ul {
     list-style-type: none;
@@ -204,7 +209,7 @@ ul {
 .footer_links li {
     display: inline-block;
     margin: 10px 20px; /* Espaciado horizontal entre elementos */
-    font-family: 'Popins', sans-serif;
+    font-family: 'Playfair Display', serif;
 }
 .footer_links a {
     color: black;
@@ -224,7 +229,7 @@ ul {
 }
 
 .contacto h1 {
-    font-family: 'roboto', sans-serif;
+    font-family: 'pinyon script', cursive;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -233,7 +238,7 @@ ul {
 }
 
 .contacto p {
-    font-family: 'roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
     color: black;
     text-align: center;
@@ -255,14 +260,14 @@ ul {
 }
 
 .icon_redes p {
-    font-family: 'roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 20px;
     color: black;
     margin: 10px;
 }
 
 .icon_redes a:hover {
-    color: lightskyblue;
+    color: #a4a68e;
     cursor: pointer;
 }
 
@@ -270,23 +275,24 @@ ul {
 .devolucion h1, 
 .privacidad h1, 
 .terminos-condicion h1 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 36px;
+    font-family: 'pinyon script', cursive;
+    font-size: 40px;
     color: black;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .preguntas h2, 
 .devolucion h2, 
 .privacidad h2, 
 .terminos-condicion h2 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    color: black;
-    text-align: justify;
+    font-family: 'pinyon script', cursive;
+    font-size: 38px;
+    text-align: left;
     margin: 20px 30px;
+    letter-spacing: 3px;
 }
 
 .preguntas p, 
@@ -295,10 +301,10 @@ ul {
 .privacidad p, 
 .privacidad li, 
 .terminos-condicion p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
     color: black;
-    text-align: justify;
+    text-align: left;
     margin: 20px 30px;
     line-height: 1.5;
 }
@@ -309,53 +315,15 @@ ul {
     margin: 50px;
 }
 
-@media (max-width: 768px) {
-    /* Centrar contenido */
-    .preguntas, 
-    .devolucion, 
-    .privacidad, 
-    .terminos-condicion {
-        padding: 0 10px;
-        text-align: center;
-    }
 
-    .preguntas h2, 
-    .devolucion h2, 
-    .privacidad h2, 
-    .terminos-condicion h2,
-    .preguntas p, 
-    .devolucion p, 
-    .devolucion li, 
-    .privacidad p, 
-    .privacidad li, 
-    .terminos-condicion p {
-        text-align: center;
-        margin: 20px 10px;
-    }
-
-    .mapa iframe {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Ajustes para web */
-@media (min-width: 769px) {
-    .preguntas p, 
-    .devolucion p, 
-    .devolucion li, 
-    .privacidad p, 
-    .privacidad li, 
-    .terminos-condicion p {
-        line-height: 1.5;
-    }
-}
 
 .galeria {
     position: relative;
     text-align: center;
     margin-top: 20px;
     overflow: hidden; /* Oculta imágenes fuera del contenedor */
+    font-family: 'pinyon script', cursive;
+    letter-spacing: 5px;
 }
 
 .galeria .fila {
@@ -446,129 +414,5 @@ ul {
 .modal-content {
     max-width: 100%;
     max-height: 80vh; /* Limita la altura de la imagen */
-}
-
-@media (max-width: 1470px) {
-    .galeria .fila img {
-        width: 400px; /* Ajusta según el tamaño que desees para las imágenes */
-        height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
-        margin:15px; /* Añade un margen alrededor de cada imagen */
-        border-radius: 5px; /* Añade esquinas redondeadas */
-    }
-}
-
-@media (max-width: 768px) {
-    /* Estilos específicos para móviles */
-
-    .navbar {
-        flex-direction: column;
-    }
-
-    #MenuItems {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #MenuItems li {
-        margin: 0.5em 0;
-    }
-
-    .collage img, .galeria .fila img {
-        width: 100%;
-        max-width: none;
-        margin: 0.5em 0;
-    }
-
-    .galeria .fila {
-        display: block;
-    }
-
-    .galeria .fila img {
-        margin: 0.5em auto;
-        width: 80vw;
-        max-width: 21.875rem;
-    }
-
-    @media (max-width: 768px) {
-        /* Estilos específicos para móviles */
-    
-        .navbar {
-            flex-direction: column;
-        }
-    
-        #MenuItems {
-            flex-direction: column;
-            align-items: center;
-        }
-    
-        #MenuItems li {
-            margin: 0.5em 0;
-        }
-    
-        .collage img, .galeria .fila img {
-            width: 100%;
-            max-width: none;
-            margin: 0.5em 0;
-        }
-    
-        .galeria .fila {
-            display: block;
-        }
-    
-        .galeria .fila img {
-            margin: 0.5em auto;
-            width: 80vw;
-            max-width: 21.875rem;
-        }
-    
-        .banner {
-            height: 40vh; /* Ajustar la altura del banner en móviles */
-        }
-    
-        .banner_info {
-            height: auto; /* Ajustar la altura del contenido dentro del banner */
-            padding: 10px; /* Reducir el padding */
-        }
-    
-        .banner_info h3 {
-            font-size: 1.2rem; /* Ajustar el tamaño del h3 en móviles */
-        }
-    
-        .banner_info p {
-            font-size: 1rem; /* Ajustar el tamaño del párrafo en móviles */
-        }
-    
-        .banner_info button {
-            font-size: 1rem; /* Ajustar el tamaño del botón en móviles */
-            padding: 8px 16px; /* Ajustar el padding del botón en móviles */
-        }
-    
-        .categorias {
-            padding-left: 1.5em;
-            padding-right: 1.5em;
-        }
-    }
-
-    .container_home h1, .categorias, .contacto h1, .devolucion h1, 
-    .privacidad h1, .terminos-condicion h1, .preguntas h1, .galeria h1 {
-        font-size: 1.75rem; /* Reducir el tamaño de los títulos en móviles */
-    }
-
-    .contacto p, .devolucion p, .privacidad p, .terminos-condicion p, .preguntas p, .info {
-        font-size: 1rem; /* Ajustar el tamaño de texto */
-        margin: 0.5em 1em; /* Ajustar los márgenes */
-    }
-
-    .icon_redes a {
-        font-size: 3.5rem; /* Reducir el tamaño de los íconos de redes sociales */
-    }
-
-    .footer h4, .footer_links li, .footer_links a {
-        font-size: 1rem; /* Ajustar el tamaño de texto del pie de página */
-    }
-    
-    .footer_links li {
-        margin: 0.5em 1em;
-    }
 }
 

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 function enviarMensajeWhatsApp() {
    var numero = "523751115739"; // Reemplaza con el número de teléfono
-   var mensaje = "Me gustaría obtener más información sobre un servicio de Koos"; // Reemplaza con tu mensaje
+   var mensaje = "Me gustaría obtener más información sobre un servicio de Evangelista Decor"; // Reemplaza con tu mensaje
    var url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
    window.open(url, '_blank');
 }
