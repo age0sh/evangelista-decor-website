@@ -332,15 +332,14 @@ ul {
 
 .fila {
     display: flex;
-    flex-wrap: nowrap;
     overflow: hidden;
 }
 
 .fila img {
     flex: 1;
     display: block;
-    width: 400px; /* Ajusta según el tamaño que desees para las imágenes */
-    height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+    width: 300px; /* Ajusta según el tamaño que desees para las imágenes */
+    height: 500px; /* Ajusta según el tamaño que desees para las imágenes */
     margin: 15px; /* Añade un margen alrededor de cada imagen */
     border-radius: 5px; /* Añade esquinas redondeadas */
     cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
@@ -693,16 +692,10 @@ ul {
 }
 
 @media (max-width: 430px) {
-    .fila {
-        /* Asegúrate de que el contenedor de las fotos se adapte al ancho de la pantalla */
-        flex-wrap: wrap;
-        justify-content: center; /* Centra las imágenes si hay espacio adicional */
-    }
 
     .fila img {
         /* Ajusta el tamaño de las imágenes para que se adapten al ancho de la pantalla */
-        width: 100%; /* Asegúrate de que las imágenes ocupen el ancho completo del contenedor */
-        margin: 5px; /* Ajusta el margen si es necesario */
+        width: 300px; /* Asegúrate de que las imágenes ocupen el ancho completo del contenedor */
     }
 }
 .contenedor-flechas {
