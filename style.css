@@ -4,40 +4,42 @@ body {
     margin: 0;
     padding: 0;
     background-color: #fcf3e5;
-}
-
-.navbar-container {
-    position: relative;
-    background-color: #a4a68e;
+    padding-top: 100px;
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #a4a68e;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0;
-    position: relative;
-    z-index: 100;
-}
-
-.logo-container {
-    width: 100px;
-    margin-left: 5%;
+    align-items: center;
+    padding: 10px 20px; /* Ajusta según sea necesario */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    max-width: 100%;
-    height: auto;
+    max-width: 800px;
+    height: 80px;
     display: block;
+    padding-left: 30px;
 }
 
+/* Estilos para el icono de hamburguesa */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+/* Ocultar las opciones del navbar por defecto en pantallas pequeñas */
 #MenuItems {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    align-items: center;
-    margin-right: 5%;
+    gap: 1rem;
+    list-style: none;
+    margin-right: 50px;
 }
 
 #MenuItems li {
@@ -55,32 +57,34 @@ body {
     color: white;
 }
 
-.container_home h1 {
-    font-family: 'pinyon script', cursive;
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: 5px;
-    font-size: 36px;
-    text-align: center;
-    display: block;
-}
-
-.container_home p {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    color: black;
-    text-align: justify;
-    margin: 20px;
-}
-
 .content_box {
     width: 90%;
     max-width: 1200px;
     margin: 80px auto 20px;
     padding: 20px;
-    text-align: center;
+    display: flex; /* Utiliza flexbox para el layout */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
     box-sizing: border-box;
     border: 1px solid #a4a68e;
+}
+
+.logo-box {
+    margin-bottom: 20px; /* Espacio entre el logo y el texto */
+}
+
+.logo-box img {
+    max-width: 200px; /* Ajusta el tamaño máximo del logo según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.content_box p {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: black;
+    text-align: justify;
+    margin: 0; /* Elimina el margen para evitar desalineación */
+    line-height: 1.6; /* Ajusta el espaciado entre líneas para mejor legibilidad */
 }
 
 
@@ -157,7 +161,7 @@ body {
 }
 
 .banner h3 {
-    font-family: 'Pinyon Script', cursive;
+    font-family: 'Arapey', serif;
     letter-spacing: 8px;
     font-size: 50px;
     margin: 0;
@@ -190,7 +194,7 @@ body {
 }
 .footer h4 {
     color: black;
-    font-family: 'pinyon script', cursive;
+    font-family: 'Arapey', serif;
     margin-bottom: 10px;
     font-size: 20px;
     letter-spacing: 5px;
@@ -222,7 +226,7 @@ ul {
 }
 
 .contacto h1 {
-    font-family: 'pinyon script', cursive;
+    font-family: 'Arapey', serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -268,7 +272,7 @@ ul {
 .devolucion h1, 
 .privacidad h1, 
 .terminos-condicion h1 {
-    font-family: 'pinyon script', cursive;
+    font-family: 'Arapey', serif;
     font-size: 40px;
     color: black;
     text-align: center;
@@ -281,7 +285,7 @@ ul {
 .devolucion h2, 
 .privacidad h2, 
 .terminos-condicion h2 {
-    font-family: 'pinyon script', cursive;
+    font-family: 'Arapey', serif;
     font-size: 38px;
     text-align: left;
     margin: 20px 30px;
@@ -316,7 +320,7 @@ ul {
 }
 
 .galeria h1 {
-    font-family: 'pinyon script', cursive;
+    font-family: 'Arapey', serif;
     font-size: 36px;
     color: black;
     text-align: center;
@@ -431,38 +435,81 @@ ul {
 @media (max-width: 800px) {
     body {
         text-align: center;
+        padding-top: 150px;
     }
-
+    
     .navbar {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding-left: 0;
         flex-direction: column;
         align-items: center;
+        background-color: #a4a68e; /* Asegúrate de que el fondo sea visible */
+        z-index: 1000; /* Asegúrate de que la navbar esté por encima de otros elementos */
+    }
+
+    .navbar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .logo-container {
-        margin-left: 0;
-        margin-bottom: 10px;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
     }
 
+
+    .logo img {
+        width: 200px;
+        height: 100px;
+        justify-content: flex-start;
+        padding-left: 1px;
+    }
+
+    .menu-icon {
+        font-size: 2rem;
+        cursor: pointer;
+        flex: 1; /* Asegura que el icono se alinee a la derecha */
+        display: flex;
+        justify-content: flex-end; /* Alinea el icono a la derecha del contenedor */
+        margin-right: 30px;
+    }
+    
     #MenuItems {
-        flex-direction: column;
-        align-items: center;
-        margin-right: 0;
+        display: none;
+        flex-direction: column; /* Cambiar a columna en lugar de fila */
+        align-items: center; /* Centrar los elementos en la columna */
+        width: 45%; /* Ancho completo para que ocupe todo el espacio disponible */
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        position: absolute; /* Colocar el menú sobre el contenido */
+        top: 50%; /* Ajustar la posición para que se muestre debajo del ícono de hamburguesa */
+        left: 49%;
+        right: 0;
+        background-color: #a4a68e; /* Asegúrate de que el fondo sea visible */
+        z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
+    }
+    
+    #MenuItems.show {
+        display: flex;
     }
 
     #MenuItems li {
-        margin: 10px 0;
+        margin: 10px 0; /* Ajustar el margen para espaciar verticalmente */
+        list-style: none;
+ 
     }
 
-    .container_home h1 {
-        font-size: 28px;
-        letter-spacing: 3px;
-    }
 
-    .container_home p {
-        font-size: 16px;
-        text-align: center;
-        margin: 10px 20px;
-    }
 
     .content_box {
         width: 100%;
@@ -501,7 +548,7 @@ ul {
     }
 
     .banner h3 {
-        font-size: 20px;
+        font-size: 16px;
         margin: 0;
     }
 
@@ -531,11 +578,14 @@ ul {
         font-size: 32px;
         margin-top: 30px;
         margin-bottom: 15px;
+        text-align: center;
     }
 
     .contacto p {
         font-size: 16px;
         margin: 10px 15px;
+        text-align: justify;
+        margin-bottom: 40px;
     }
 
     .icon_redes {
@@ -549,6 +599,8 @@ ul {
 
     .icon_redes p {
         font-size: 16px;
+        margin-bottom: 40px;
+        text-align: center;
     }
 
     .mapa {
@@ -588,13 +640,20 @@ ul {
     }
 
     .preguntas p, 
-    .devolucion p, 
+    .devolucion p,
     .privacidad p, 
     .terminos-condicion p {
         font-size: 16px;
         margin: 15px 20px;
+        text-align: justify;
     }
 
+    .devolucion li,
+    .privacidad li {
+        font-size: 16px;
+        margin: 15px 20px;
+        text-align: justify;
+    }
 
 
     .contenedor-puntos {

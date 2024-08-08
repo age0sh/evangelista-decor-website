@@ -113,3 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('MenuItems');
+    menu.classList.toggle('show');
+});
+
+// Cerrar el menú si se hace clic fuera de él
+document.addEventListener('click', function(event) {
+    var menu = document.getElementById('MenuItems');
+    var menuIcon = document.getElementById('menu-toggle');
+
+    if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+        menu.classList.remove('show');
+    }
+});
