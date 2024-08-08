@@ -244,10 +244,10 @@ ul {
     margin-left: 30px;
     margin-right: 50px;
 }
-    .icon_redes {
+.icon_redes {
     display: auto;
     text-align: center;
-    }
+}
 
 .icon_redes a {
     font-size: 90px;
@@ -312,11 +312,10 @@ ul {
     margin: 50px;
 }
 
-
-
 .galeria {
     position: relative;
     align-items: center;
+    visibility: hidden;
 }
 
 .galeria h1 {
@@ -333,19 +332,23 @@ ul {
 .fila {
     display: flex;
     overflow: hidden;
+    margin-left: 10px; /* Añade un margen alrededor de cada imagen */
+    margin-right: 10px;
 }
 
 .fila img {
     flex: 1;
     display: block;
-    width: 300px; /* Ajusta según el tamaño que desees para las imágenes */
-    height: 500px; /* Ajusta según el tamaño que desees para las imágenes */
-    margin: 15px; /* Añade un margen alrededor de cada imagen */
+    width: 350px; /* Ajusta según el tamaño que desees para las imágenes */
+    height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+    margin: 10px;
     border-radius: 5px; /* Añade esquinas redondeadas */
     cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
-
 }
 
+.fila img:hover {
+    transform: scale(1.05); /* Añade un efecto de desplazamiento al pasar el ratón por encima */
+}
 .contenedor-flechas {
     display: flex;
     justify-content: center;
@@ -383,6 +386,8 @@ ul {
 .puntos .active {
     background: #000; /* Color del punto activo */
 }
+
+
 
 /* Estilo del modal */
 .modal {
@@ -469,7 +474,7 @@ ul {
         width: 200px;
         height: 100px;
         justify-content: flex-start;
-        padding-left: 1px;
+        padding-left: 20px;
     }
 
     .menu-icon {
@@ -654,6 +659,22 @@ ul {
         text-align: justify;
     }
 
+    .fila {
+        display: flex;
+        overflow: hidden;
+        margin-left: 10px; /* Añade un margen alrededor de cada imagen */
+        margin-right: 10px;
+    }
+    
+    .fila img {
+        flex: 1;
+        display: block;
+        width: 350px; /* Ajusta según el tamaño que desees para las imágenes */
+        height: 400px; /* Ajusta según el tamaño que desees para las imágenes */
+        margin: 0;
+        border-radius: 5px; /* Añade esquinas redondeadas */
+        cursor: pointer; /* Añade un cursor al pasar el ratón por encima */
+    }
 
     .contenedor-puntos {
         margin: 10px 0;
@@ -691,21 +712,4 @@ ul {
     }
 }
 
-@media (max-width: 430px) {
 
-    .fila img {
-        /* Ajusta el tamaño de las imágenes para que se adapten al ancho de la pantalla */
-        width: 300px; /* Asegúrate de que las imágenes ocupen el ancho completo del contenedor */
-    }
-}
-.contenedor-flechas {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.contenedor-flechas .prev, .contenedor-flechas .next {
-    cursor: pointer;
-    padding: 10px;
-    font-size: 24px;
-}

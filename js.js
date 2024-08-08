@@ -40,9 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const puntosContainer = galeria.querySelector('.puntos');
         
         let currentIndex = 0;
+        let startX = 0;
+        let endX = 0;
 
         function getItemsPerPage() {
-            return window.innerWidth >= 1300 ? 3 : 1;
+            return window.innerWidth >= 1000 ? 3 : 1;
         }
 
         function updateGallery() {
@@ -61,6 +63,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 puntosContainer.appendChild(punto);
             }
+
+            // Hacer visible la galería después de actualizarla
+            galeria.style.visibility = 'visible';
         }
 
         function showNext() {
@@ -83,6 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
             updateGallery();
         }
 
+        // Agrega detección de deslizar
+        galeria.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        galeria.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        });
+
+        galeria.addEventListener('touchend', () => {
+            const deltaX = startX - endX;
+            if (deltaX > 50) {
+                showNext(); // Deslizó hacia la izquierda, muestra la siguiente imagen
+            } else if (deltaX < -50) {
+                showPrev(); // Deslizó hacia la derecha, muestra la imagen anterior
+            }
+        });
+
         prevBtn.addEventListener('click', showPrev);
         nextBtn.addEventListener('click', showNext);
 
@@ -92,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateGallery();
     });
 });
+
 
 
 
